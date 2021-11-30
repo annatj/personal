@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 d-none d-md-block">
                         <div class="hero-image">
-                           <img src="img/anna.jpg">
+                           <img src="img/profilephoto.jpg">
                         </div>
                     </div>
                 </div>
@@ -293,33 +293,33 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="portfolio-wrap">
                             <div class="portfolio-img">
-                                <img src="img/Screenshot (157).png" alt="Image">
+                                <img src="img/Screenshot (157)-min.png" alt="Image">
                             </div>
                             <div class="portfolio-text">
                                 <h3>iphone Website</h3>
-                                <a class="btn" href="img/Screenshot (157).png" data-lightbox="portfolio">+</a>
+                                <a class="btn" href="img/Screenshot (157)-min.png" data-lightbox="portfolio">+</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
                             <div class="portfolio-img">
-                                <img src="img/Screenshot (158).png" alt="Image">
+                                <img src="img/Screenshot (158)-min (2).png" alt="Image">
                             </div>
                             <div class="portfolio-text">
                                 <h3>Banjara's beauty product website</h3>
-                                <a class="btn" href="img/Screenshot (158).png" data-lightbox="portfolio">+</a>
+                                <a class="btn" href="img/Screenshot (158)-min (2).png" data-lightbox="portfolio">+</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="portfolio-wrap">
                             <div class="portfolio-img">
-                                <img src="img/Screenshot (159).png" alt="Image">
+                                <img src="img/Screenshot (159)-min (1).png" alt="Image">
                             </div>
                             <div class="portfolio-text">
                                 <h3>Reebok website</h3>
-                                <a class="btn" href="img/Screenshot (159).png" data-lightbox="portfolio">+</a>
+                                <a class="btn" href="img/Screenshot (159)-min (1).png" data-lightbox="portfolio">+</a>
                             </div>
                         </div>
                     </div>
@@ -370,7 +370,7 @@
                     <h2>Full Stack Developer</h2>
                 </div>
                 <div class="container banner-text">
-                    <p>
+                    <p >
                         I want to be a Full Stack Developer in a reputed company.Full Stack Developer is an engineer who works on both client-side and server-side of the software application. This type of developer works on the Full Stack of a software application meaning Front end development, Back end development, Database, Server, API, and version controlling systems. Hence, the name “Full Stack” Developer.Full stack developer translates user requirements into the overall architecture and implement the new systems. A Full-Stack Developer doesn’t necessarily master all technologies. However, the professional is expected to work on the client as well as server sides and understand what is going on when developing an application. He or she should have a genuine interest in all software technologies.
                     </p>
                     <p style="color:black">"Ambition is the first step to success.The second step is action"</p>
@@ -540,7 +540,7 @@
                         <div class="col-md-8">
                             <div class="contact-form">
                                 <div id="success"></div>
-                                <form name="sentMessage"  action="" id="submit-form" >
+                                <form name="sentMessage" id="submit-form" method="post" >
                                     <div class="control-group">
                                         <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"  onkeyup="namevalidate()" />
                                         <p id="name2"></p>
@@ -562,8 +562,8 @@
                                         <p class="help-block"></p>
                                     </div>
                                     <div>
-                                        <button class="btn" type="submit" id="sendMessageButton" onclick="buttonvalidate()">Send Message</button>
-                                    </div>
+                                        <button class="btn" type="button" id="sendMessageButton" onclick="buttonvalidate()">Send Message</button>
+                                    </div> 
                                 </form>
                               
                                
@@ -588,7 +588,7 @@
                     return true;
                 }else{
                     $('#name2').html("Enter valid name");
-                    return true;
+                    return false;
                 }
             }
             function emailvalidate(){
@@ -639,7 +639,10 @@
                     
 
                 function buttonvalidate(){
-                    if(namevalidate()==true&&emailvalidate()==true&&subjectvalidate==true&&messagevalidate()==true){
+                    
+                    if(namevalidate()==true && emailvalidate()==true && subjectvalidate()==true && msgvalidate()==true){
+                        console.log('a')
+                    
                  
                 $.ajax({
                     url:"https://script.google.com/macros/s/AKfycbxGonZRfU-dtaB-v-nr0CErWRfcISRyOhGPEXp_TlTreFYIJPCVdUqv6e5b-cmgfMZB7Q/exec",
@@ -647,7 +650,7 @@
                     method:"post",
                     success:function (response){
                         alert("Form submitted successfully")
-                        window.location.reload()
+                      //  window.location.reload()
                         //window.location.href="https://google.com"
                     },
                     error:function (err){
