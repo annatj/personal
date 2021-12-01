@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 d-none d-md-block">
                         <div class="hero-image">
-                           <img src="newprofilpic.png">
+                           <img src="img/newprofilpic.png">
                         </div>
                     </div>
                 </div>
@@ -646,6 +646,10 @@
                     method:"post",
                     success:function (response){
                         alert("Form submitted successfully")
+                        document.getElementById("name").value="";
+                        document.getElementById("email").value="";
+                        document.getElementById("subject").value="";
+                        document.getElementById("message").value="";
                       //  window.location.reload()
                         //window.location.href="https://google.com"
                     },
